@@ -1,0 +1,11 @@
+[Unit]
+Description=Nmap prometheus exporter
+After=network.target nss-lookup.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/usr/bin/python3 -u /path/to/nmap-exporter/main.py /path/to/nmap-prober.yml
+
+[Install]
+WantedBy=multi-user.target
